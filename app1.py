@@ -7,14 +7,6 @@ import os
 random_forest_model = joblib.load('random_forest.pkl')  # Pastikan file model berada di direktori yang sama
 scaler = joblib.load('scaler.pkl')  # Pastikan file scaler berada di direktori yang sama
 
-# Fungsi untuk menyematkan file CSS
-def load_css(css_file):
-    with open(css_file) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-# Memuat CSS
-load_css("styles.css")
-
 # Streamlit App Title
 st.title("Prediksi Kualitas Air")
 st.write("Aplikasi ini memprediksi apakah air dapat diminum (aman untuk dikonsumsi) berdasarkan parameter kualitas air.")
