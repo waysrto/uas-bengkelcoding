@@ -1,1 +1,32 @@
-:D
+### Kesimpulan Hasil Pemodelan
+
+1. Model Gradient Boosting:
+   - Akurasi (Raw dan Normalized): 67%.
+   - Confusion Matrix menunjukkan model ini cukup baik membedakan kelas dengan akurasi yang moderat, namun masih terdapat kesalahan klasifikasi yang signifikan, terutama dalam mendeteksi kelas minoritas (`Potability = 1`).
+
+2. Model Random Forest:
+   - Akurasi (Raw dan Normalized): 84%.
+   - Confusion Matrix menunjukkan model ini bekerja jauh lebih baik dibandingkan Gradient Boosting, dengan kemampuan mendeteksi kedua kelas lebih akurat.
+   - Model ini menghasilkan performa terbaik dibandingkan yang lain.
+
+3. Model SVM:
+   - Akurasi Raw: 49% (tanpa normalisasi).
+   - Akurasi Normalized: 67% (setelah normalisasi).
+   - Hasil ini menunjukkan bahwa SVM sangat bergantung pada normalisasi data. Tanpa normalisasi, performanya sangat rendah karena sifat algoritma yang sensitif terhadap skala fitur.
+
+
+### Mengapa Gradient Boosting dan Random Forest Memiliki Akurasi Sama Sebelum dan Sesudah Normalisasi?**
+
+1. Gradient Boosting:
+   - Gradient Boosting adalah model berbasis pohon keputusan yang tidak sensitif terhadap skala data. Artinya, fitur tidak perlu dinormalisasi untuk memengaruhi performa model.
+   - Karena itu, normalisasi tidak berdampak pada akurasi maupun matriks kebingungan.
+
+2. Random Forest:
+   - Sama seperti Gradient Boosting, Random Forest juga berbasis pohon keputusan. Model ini mengevaluasi split data berdasarkan ranking fitur, bukan nilai numerik absolut.
+   - Oleh karena itu, normalisasi juga tidak berdampak pada performa model.
+
+
+### Catatan untuk Model SVM
+- SVM sangat sensitif terhadap skala fitur karena algoritmanya bekerja berdasarkan jarak antar data (margin).
+- Normalisasi memastikan semua fitur memiliki kontribusi yang seimbang dalam menentukan hyperplane, sehingga performa meningkat signifikan.
+
