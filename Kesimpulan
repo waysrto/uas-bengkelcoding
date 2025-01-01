@@ -30,3 +30,43 @@
 - SVM sangat sensitif terhadap skala fitur karena algoritmanya bekerja berdasarkan jarak antar data (margin).
 - Normalisasi memastikan semua fitur memiliki kontribusi yang seimbang dalam menentukan hyperplane, sehingga performa meningkat signifikan.
 
+1. Gradient Boosting:
+   - Keunggulan:
+     - Dapat mengatasi berbagai jenis data dan hubungan non-linear dengan sangat baik.
+     - Membuat model yang kuat dengan menggunakan ensemble dari model-model sederhana (decision trees).
+     - Dapat mengoptimalkan kesalahan dengan fokus pada data yang sulit diprediksi.
+   - Keterbatasan:
+     - Rentan terhadap overfitting jika tidak disetel dengan baik (hyperparameter tuning sangat penting).
+     - Proses pelatihan yang lebih lambat dibandingkan dengan beberapa algoritma lain.
+     - Memerlukan waktu lebih lama dalam proses training, terutama untuk dataset yang besar.
+
+2. Random Forest:
+   - Keunggulan:
+     - Cenderung lebih tahan terhadap overfitting, terutama dengan dataset yang besar.
+     - Dapat menangani data yang hilang dengan cukup baik.
+     - Proses training lebih cepat dibandingkan dengan Gradient Boosting.
+     - Dapat memberikan estimasi fitur penting yang dapat digunakan untuk analisis lebih lanjut.
+   - Keterbatasan:
+     - Modelnya bisa menjadi lebih besar dan sulit untuk diinterpretasi jika jumlah pohon yang digunakan sangat banyak.
+     - Meskipun lebih stabil, Random Forest mungkin kurang akurat dibandingkan dengan model-model yang lebih terfokus seperti Gradient Boosting pada beberapa kasus.
+
+3. SVM (Support Vector Machine):
+   - Keunggulan:
+     - Efektif untuk data dengan dimensi tinggi (high-dimensional data).
+     - Kuat dalam menangani kasus-kasus dengan margin keputusan yang jelas antara kelas.
+     - Dapat digunakan untuk data non-linear dengan kernel yang sesuai.
+   - Keterbatasan:
+     - Tidak bekerja dengan baik pada dataset besar atau dengan banyak data noise.
+     - Parameter yang digunakan (seperti kernel dan regularization) perlu disetel dengan sangat hati-hati.
+     - Proses pelatihan bisa memakan waktu lama untuk dataset besar, dan membutuhkan memori yang cukup banyak.
+
+
+Rekomendasi Algoritma yang Paling Efektif:
+
+Berdasarkan hasil evaluasi yang diberikan, Random Forest menjadi algoritma yang paling efektif untuk kasus ini. 
+
+- Alasan mengapa Random Forest optimal:
+  - Akurasinya lebih tinggi (0.84) dibandingkan dengan Gradient Boosting (0.67) dan SVM (0.49/0.67).
+  - Stabilitas: Random Forest lebih stabil dalam hal akurasi, dan tidak rentan terhadap overfitting jika dibandingkan dengan Gradient Boosting, yang cenderung lebih sensitif terhadap pengaturan hyperparameter.
+  - Kemudahan Implementasi: Dibandingkan dengan SVM, Random Forest lebih mudah untuk diimplementasikan dan memerlukan lebih sedikit tuning dibandingkan dengan Gradient Boosting.
+  
